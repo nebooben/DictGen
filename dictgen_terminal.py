@@ -4,7 +4,6 @@
 import sys
 import time
 from dictgenpy3 import *
-# from getusers import get_users
 from extract import extract
 from join import join as the_join
 from passgen import password_generator
@@ -84,12 +83,6 @@ def start(argv):
                 logins_flag = True
         elif len(part) == 2:
             opt, arg = part
-            # if opt in ['-s', '-service']:
-            #     service = arg
-            # elif opt in ['-u', '-user', '-seeduser']:
-            #     seed_user = arg
-            # elif opt in ['-d', '-deep']:
-            #     deep = int(arg)
             if opt in ['-a', '-alphabet']:
                 alpha_char = arg
             elif opt in ['-l', '-length']:
@@ -107,12 +100,6 @@ def start(argv):
                 passwords_file = main_path + arg
             elif opt in ['-o', '-output_name', '-output']:
                 output_name = arg
-    # if utility == 'getusers':
-    #     try:
-    #         output = get_users(service, seed_user, deep)
-    #     except Exception as e:
-    #         print 'getusers ' + e.message
-    #         sys.exit()
     if utility == 'addpass':
         try:
             output = add_passwords(file_path, alpha_char, length, amount, pattern, random_flag, index_flag, popular_flag, leet_flag)
